@@ -1,6 +1,6 @@
 class Bookstore(object):
     
-    def __init__(self, name):
+    def __init__(self, name,):
         self.name = name
         self.books = []
         
@@ -14,7 +14,7 @@ class Bookstore(object):
         booklist = []
         if title:
             for book in self.books:
-                if title.lower() in book.title.lower():
+                if title in book.title:
                     booklist.append(book)
             return booklist
         elif author:
@@ -64,13 +64,12 @@ store.add_book(moby)
 '''
 
 store = Bookstore("Rmotr's bookstore")
-borges = Author("Jorge Luis Borges", "AR")
-poe = Author('Edgar Allan Poe', 'US')
+self.borges = Author("Jorge Luis Borges", "AR")
+        self.poe = Author('Edgar Allan Poe', 'US')
 
-ficciones = Book("Ficciones", author=borges)
-aleph = Book("The Aleph", author=borges)
-raven = Book("The Raven", author=poe)
-store.add_book(ficciones)
-store.add_book(aleph)
+        self.ficciones = Book("Ficciones", author=self.borges)
+        self.aleph = Book("The Aleph", author=self.borges)
+        self.raven = Book("The Raven", author=self.poe)
+store.add_book(self.ficciones)
+store.add_book(self.aleph)
 results = store.search_books(title='ficc')
-print results
