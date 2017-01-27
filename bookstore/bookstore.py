@@ -50,27 +50,3 @@ class Book(object):
         self.author = author
         self.author.add_book(self)
         
-'''
-melville = Author('Herman Melville', 'US')
-melville.name
->>>"Herman Melville"
-
-moby = Book("Moby Dick", author=melville)
-moby.title
->>>"Moby Dick"
-moby.author.name
->>>"Herman Melville"
-store.add_book(moby)
-'''
-
-store = Bookstore("Rmotr's bookstore")
-borges = Author("Jorge Luis Borges", "AR")
-poe = Author('Edgar Allan Poe', 'US')
-
-ficciones = Book("Ficciones", author=borges)
-aleph = Book("The Aleph", author=borges)
-raven = Book("The Raven", author=poe)
-store.add_book(ficciones)
-store.add_book(aleph)
-results = store.search_books(title='ficc')
-print results
